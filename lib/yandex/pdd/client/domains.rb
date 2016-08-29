@@ -1,6 +1,6 @@
 module Yandex
   module Pdd
-    module Client
+    class Client
       module Domains
 
         # page=<номер страницы ответа>

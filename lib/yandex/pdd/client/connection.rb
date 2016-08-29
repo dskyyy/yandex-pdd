@@ -1,6 +1,6 @@
 module Yandex
   module Pdd
-    module Client
+    class Client
       module Connection
 
         def get(path, options = {})

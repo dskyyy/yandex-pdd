@@ -5,17 +5,21 @@ require 'yandex/pdd/client/mailboxes'
 
 module Yandex
   module Pdd
-    include HTTParty
-    include Yandex::Pdd::Client::Domains
-    include Yandex::Pdd::Client::Mailboxes
+    class Client
 
-    base_uri 'https://pddimp.yandex.ru'
-    format :json
+      include HTTParty
+      include Yandex::Pdd::Client::Domains
+      include Yandex::Pdd::Client::Mailboxes
 
-    def initialize(token = nil)
-      @token = token || ENV['PDD_TOKEN']
+      base_uri 'https://pddimp.yandex.ru'
+      format :json
 
-      self.class.default_options.merge!(headers: {:PddToken => @token})
+      def initialize(token = nil)
+        @token = token || ENV['PDD_TOKEN']
+
+        self.class.default_options.merge!(headers: {:PddToken => @token})
+      end
+
     end
   end
 end
