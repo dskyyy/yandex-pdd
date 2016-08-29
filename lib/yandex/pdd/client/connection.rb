@@ -2,7 +2,6 @@ module Yandex
   module Pdd
     class Client
       module Connection
-
         def get(path, options = {})
           request :get, path, options
         end
@@ -24,13 +23,11 @@ module Yandex
         end
 
         private
+
         def request(http_method, path, options)
-          response = self.class.send(http_method, path, {query: options})
-          data = response.parsed_response
-
-          JSON.parse(data)
+          response = self.class.send(http_method, path, body: options)
+          response.parsed_response
         end
-
       end
     end
   end

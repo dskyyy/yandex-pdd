@@ -6,8 +6,8 @@ require 'yandex/pdd/client/mailboxes'
 module Yandex
   module Pdd
     class Client
-
       include HTTParty
+      include Yandex::Pdd::Client::Connection
       include Yandex::Pdd::Client::Domains
       include Yandex::Pdd::Client::Mailboxes
 
@@ -17,9 +17,8 @@ module Yandex
       def initialize(token = nil)
         @token = token || ENV['PDD_TOKEN']
 
-        self.class.default_options.merge!(headers: {:PddToken => @token})
+        self.class.default_options.merge!(headers: { PddToken: @token })
       end
-
     end
   end
 end

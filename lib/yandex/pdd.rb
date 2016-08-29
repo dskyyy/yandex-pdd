@@ -5,6 +5,5 @@ require 'yandex/pdd/client'
 
 module Yandex
   module Pdd
-
   end
 end

@@ -2,59 +2,57 @@ module Yandex
   module Pdd
     class Client
       module Mailboxes
-
-        # domain=<имя домена>
-        # login=<логин почтового ящика>
-        # password=<пароль>
-        def add(options = {})
-          post("/api2/admin/email/add", options)
+        # domain=<Domain name>
+        # login=<Login>
+        # password=<Password>
+        def mailbox_add(options = {})
+          post('/api2/admin/email/add', options)
         end
 
-        # domain=<имя домена>
-        # page=<номер страницы ответа>
-        # on_page=<количество почтовых ящиков на каждой странице ответа>
-        def list(domain, page = nil, on_page = nil)
-          options = {
-              :domain => domain,
-              :page => page,
-              :on_page => on_page
+        # domain=<Domain>
+        # page=<Page number>
+        # on_page=<Mailboxes per page>
+        def mailbox_list(domain, page = nil, on_page = nil)
+          query = {
+            domain: domain,
+            page: page,
+            on_page: on_page
           }
 
-          get("/api2/admin/email/list", query: options)
+          get('/api2/admin/email/list', query)
         end
 
-        # domain=<имя домена>
-        # login=<email-адрес или логин почтового ящика>|uid=<идентификатор почтового ящика>
-        # password=<новый пароль>
-        # iname=<имя>
-        # fname=<фамилия>
-        # enabled=<статус работы почтового ящика>
-        # birth_date=<дата рождения>
-        # sex=<пол>
-        # hintq=<секретный вопрос>
-        # hinta=<ответ на секретный вопрос>
-        def edit(options = {})
-          post("/api2/admin/email/edit", options)
+        # domain=<Domain name>
+        # login=<Email or login>|uid=<Mailbox ID>
+        # password=<The new password>
+        # iname=<Name>
+        # fname=<Last name>
+        # enabled=<State>
+        # birth_date=<Date of birth>
+        # sex=<Sex>
+        # hintq=<Secret answer>
+        # hinta=<Secret answer key>
+        def mailbox_edit(options = {})
+          post('/api2/admin/email/edit', options)
         end
 
-        # domain=<имя домена>
-        # login=<email-адрес или логин почтового ящика>|uid=<идентификатор почтового ящика>
-        def delete(options = {})
-          post("/api2/admin/email/del", options)
+        # domain=<Domain name>
+        # login=<Email or login>|uid=<Mailbox ID>
+        def mailbox_delete(options = {})
+          post('/api2/admin/email/del', options)
         end
 
-        # @param domain=<имя домена>
-        # @param login=<email-адрес или логин почтового ящика>|uid=<идентификатор почтового ящика>
-        def counters(domain, login = nil, uid = nil)
-          options = {
-              :domain => domain,
-              :login => login,
-              :uid => uid
+        # domain=<Domain name>
+        # login=<Email or login>|uid=<Mailbox ID>
+        def mailbox_counters(domain, login = nil, uid = nil)
+          query = {
+            domain: domain,
+            login: login,
+            uid: uid
           }
 
-          get("/api2/admin/email/counters", query: options)
+          get('/api2/admin/email/counters', query)
         end
-
       end
     end
   end
