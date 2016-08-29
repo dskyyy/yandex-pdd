@@ -1,8 +1,15 @@
-# Yandex::Pdd
+# Yandex-Pdd
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/yandex/pdd`. To experiment with that code, run `bin/console` for an interactive prompt.
+Unofficial Yandex Mail for Domain service API implementation.
 
-TODO: Delete this and the text above, and describe your gem
+- [x] Domains
+- [x] Domain's mailboxes
+- [ ] Mailing lists
+- [ ] Import
+- [ ] Sharing of a domain's management privileges
+- [ ] Managing DKIM
+- [ ] Managing DNS
+- [ ] Managing OAuth features
 
 ## Installation
 
@@ -22,8 +29,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First of all [create access token](https://pddimp.yandex.ru/api2/registrar/get_token)
 
+Initialize client via access token:
+```ruby
+client = Yandex::Pdd::Client.new('PDD_TOKEN')
+```
+
+Call to API:
+```ruby
+client.mailbox_list('domain_name')
+```
+
+Methods are available:
+###### Domains
+```ruby
+domain_list
+domain_register
+domain_registration_status
+domain_details
+domain_set_country
+```
+
+###### Mailboxes
+```ruby
+mailbox_add
+mailbox_list
+mailbox_edit
+mailbox_delete
+mailbox_counters
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -32,7 +67,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/yandex-pdd.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/dskyyy/yandex-pdd]()
 
 
 ## License
