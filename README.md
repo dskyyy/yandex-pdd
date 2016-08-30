@@ -4,9 +4,10 @@ Unofficial Yandex Mail for Domain service API implementation.
 
 - [x] Domains
 - [x] Domain's mailboxes
-- [ ] Mailing lists
+- [x] Subscriptions list
+- [x] Managing subscribers
 - [ ] Import
-- [ ] Sharing of a domain's management privileges
+- [ ] Sharing domain's management privileges
 - [ ] Managing DKIM
 - [ ] Managing DNS
 - [ ] Managing OAuth features
