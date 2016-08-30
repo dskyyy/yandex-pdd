@@ -2,7 +2,6 @@ module Yandex
   module Pdd
     class Client
       module Subscriptions
-
         # domain=<Domain name>
         # maillist=<Email or subscription login>|maillist_uid=<Subscription ID>
         # subscriber=<Subscriber's email>|subscriber_uid=<Subscriber's ID>
@@ -49,7 +48,6 @@ module Yandex
         def subscription_set_status(options = {})
           post('/api2/admin/email/ml/set_can_send_on_behalf', options)
         end
-
       end
     end
   end

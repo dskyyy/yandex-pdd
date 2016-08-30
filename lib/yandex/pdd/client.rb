@@ -19,7 +19,6 @@ module Yandex
 
         self.class.default_options.merge!(headers: { PddToken: @token })
       end
-
     end
   end
 end
