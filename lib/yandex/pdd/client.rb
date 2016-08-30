@@ -20,11 +20,6 @@ module Yandex
         self.class.default_options.merge!(headers: { PddToken: @token })
       end
 
-      def add_headers(*headers)
-        headers.each do |header|
-          self.class.default_options.headers << header
-        end
-      end
     end
   end
 end
