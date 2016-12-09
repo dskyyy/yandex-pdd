@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'yandex/pdd/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'yandex-pdd'
+  spec.name          = 'yandex-pdd-2'
   spec.version       = Yandex::Pdd::VERSION
   spec.authors       = ['Dmitry Makeev']
   spec.email         = ['dmakeev@gmail.com']
