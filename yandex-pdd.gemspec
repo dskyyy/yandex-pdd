@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Dmitry Makeev']
   spec.email         = ['dmakeev@gmail.com']
 
-  spec.summary       = 'Yandex PDD API client'
-  spec.description   = 'Yandex Mail for Domain API client'
+  spec.summary       = 'Yandex PDD API version 2 client'
+  spec.description   = 'Yandex Mail for Domain API version 2 client'
   spec.homepage      = 'https://github.com/dskyyy/yandex-pdd'
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -17,10 +17,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.required_ruby_version = '>= 2.1.0'
+
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rspec', '~> 3.5'
+  spec.add_development_dependency 'rubocop', '~> 0.46.0'
 
-  spec.add_dependency 'httparty'
+  spec.add_dependency 'httparty', '~> 0.14.0'
 end
