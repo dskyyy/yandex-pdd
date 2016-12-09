@@ -17,7 +17,7 @@ Unofficial Yandex Mail for Domain service API implementation.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'yandex-pdd'
+gem 'yandex-pdd-2'
 ```
 
 And then execute:
@@ -26,7 +26,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install yandex-pdd
+    $ gem install yandex-pdd-2
 
 ## Usage
 
