@@ -2,6 +2,8 @@ require 'yandex/pdd/client/connection'
 
 require 'yandex/pdd/client/domains'
 require 'yandex/pdd/client/mailboxes'
+require 'yandex/pdd/client/maillists'
+require 'yandex/pdd/client/subscriptions'
 
 module Yandex
   module Pdd
@@ -10,6 +12,8 @@ module Yandex
       include Yandex::Pdd::Client::Connection
       include Yandex::Pdd::Client::Domains
       include Yandex::Pdd::Client::Mailboxes
+      include Yandex::Pdd::Client::Maillists
+      include Yandex::Pdd::Client::Subscriptions
 
       base_uri 'https://pddimp.yandex.ru'
       format :json
