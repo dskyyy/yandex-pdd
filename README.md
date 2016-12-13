@@ -60,6 +60,23 @@ mailbox_edit
 mailbox_delete
 mailbox_counters
 ```
+
+###### Maillists
+```ruby
+maillist_add
+maillist_list
+maillist_delete
+```
+
+###### Subscriptions
+```ruby
+subscription_add
+subscription_sublist
+subscription_destroy
+subscription_status
+subscription_set_status
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
