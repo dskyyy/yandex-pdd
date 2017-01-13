@@ -11,9 +11,8 @@ module Yandex
         # domain=<Domain name>
         def maillist_list(domain)
           query = {
-            doamin: domain
+              domain: domain
           }
-
           get('/api2/admin/email/ml/list', query)
         end
 
