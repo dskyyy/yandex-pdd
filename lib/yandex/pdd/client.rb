@@ -21,7 +21,7 @@ module Yandex
       def initialize(token = nil)
         @token = token || ENV['PDD_TOKEN']
 
-        self.class.default_options.merge!(headers: { PddToken: @token, 'Content-Type': 'application/json' })
+        self.class.default_options.merge!(headers: { PddToken: @token, 'Content-Type': 'application/x-www-form-urlencoded' })
       end
     end
   end
