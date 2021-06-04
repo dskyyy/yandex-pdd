@@ -13,11 +13,9 @@ module Yandex
         # page=<Page number>
         # on_page=<Mailboxes per page>
         def mailbox_list(domain, page = nil, on_page = nil)
-          query = {
-            domain: domain,
-            page: page,
-            on_page: on_page
-          }
+          query = { domain: domain }
+          query[:page] = page unless page.nil?
+          query[:on_page] = on_page unless on_page.nil?
 
           get('/api2/admin/email/list', query)
         end

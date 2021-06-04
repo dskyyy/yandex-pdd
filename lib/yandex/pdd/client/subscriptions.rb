@@ -13,11 +13,9 @@ module Yandex
         # domain=<Domain name>
         # maillist=<Email or subscription login>|maillist_uid=<Subscription ID>
         def subscription_sublist(domain, maillist = nil, maillist_uid = nil)
-          query = {
-            domain: domain,
-            maillist: maillist,
-            maillist_uid: maillist_uid
-          }
+          query = { domain: domain }
+          query[:maillist] = maillist unless maillist.nil?
+          query[:maillist_uid] = maillist_uid unless maillist_uid.nil?
 
           get('/api2/admin/email/ml/subscribers', query)
         end

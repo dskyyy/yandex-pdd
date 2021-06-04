@@ -3,7 +3,8 @@ module Yandex
     class Client
       module Connection
         def get(path, options = {})
-          request :get, path, options
+          response = self.class.send(:get, path, query: options)
+          response.parsed_response
         end
 
         def post(path, options = {})
